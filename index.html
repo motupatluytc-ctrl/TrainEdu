@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EduTrain - Teacher Training App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGIN PAGE -->
+<section id="loginPage">
+  <div class="container">
+    <h1>EduTrain</h1>
+    <p>Teacher Training App</p>
+
+    <input id="username" type="text" placeholder="Enter Username">
+    <input id="password" type="password" placeholder="Enter Password">
+
+    <button onclick="login()">Login</button>
+    <p class="note">Admin Login → admin / 1234</p>
+  </div>
+</section>
+
+<!-- DASHBOARD -->
+<section id="dashboardPage" style="display:none;">
+  <h2>Welcome to EduTrain Dashboard</h2>
+
+  <div class="menu">
+    <a onclick="showPage('coursesPage')">📚 Courses</a>
+    <a onclick="showPage('progressPage')">📊 Progress</a>
+    <a onclick="showPage('certificatePage')">🎓 Certificates</a>
+    <a onclick="logout()">🚪 Logout</a>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section id="coursesPage" style="display:none;">
+  <h2>Available Courses</h2>
+
+  <ul id="courseList">
+    <li>Classroom Management Basics</li>
+    <li>Modern Teaching Techniques</li>
+    <li>Student Engagement Strategies</li>
+    <li>Assessment & Evaluation</li>
+  </ul>
+
+  <a class="back" onclick="showPage('dashboardPage')">⬅ Back</a>
+</section>
+
+<!-- PROGRESS -->
+<section id="progressPage" style="display:none;">
+  <h2>Your Training Progress</h2>
+
+  <p>Course Completion: <strong>60%</strong></p>
+
+  <div class="progress-bar">
+    <div class="progress" style="width:60%;"></div>
+  </div>
+
+  <a class="back" onclick="showPage('dashboardPage')">⬅ Back</a>
+</section>
+
+<!-- CERTIFICATE -->
+<section id="certificatePage" style="display:none;">
+  <h2>Your Certificates</h2>
+
+  <div class="certificate-box">
+    <p>🎓 Certificate of Completion</p>
+    <p>Teacher Training Level 1</p>
+    <button>Download</button>
+  </div>
+
+  <a class="back" onclick="showPage('dashboardPage')">⬅ Back</a>
+</section>
+
+<!-- ADMIN PANEL -->
+<section id="adminPage" style="display:none;">
+  <h2>Admin Panel - Upload Course</h2>
+
+  <input type="text" id="courseName" placeholder="Enter Course Title">
+  <button onclick="uploadCourse()">Upload Course</button>
+
+  <p id="success"></p>
+
+  <a class="back" onclick="logout()">⬅ Logout</a>
+</section>
+
+<script src="app.js"></script>
+</body>
+      </html>
